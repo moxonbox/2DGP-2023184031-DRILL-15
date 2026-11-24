@@ -46,15 +46,13 @@ def init():
     game_world.add_collision_pair('boy:ball', boy, None)
     for ball in balls:
         game_world.add_collision_pair('boy:ball', None, ball)
+        game_world.add_collision_pair('zombie:ball', None, ball)
 
     game_world.add_collision_pair('boy:zombie', boy, None)
     for zombie in zombies:
         game_world.add_collision_pair('boy:zombie', None, zombie)
-
-    for zombie in zombies:
-            game_world.add_collision_pair('zombie:ball', zombie, None)
-    for ball in balls:
-                game_world.add_collision_pair('zombie:ball', None, ball)
+        game_world.add_collision_pair('zombie:ball', zombie, None)
+                
 
 
 
@@ -85,6 +83,8 @@ def update():
             boy.ball_count += 1
             game_world.remove_object(ball)
             balls.remove(ball)
+        if game_world.collide(zombie, ball):
+            print('COLLISION zombie : ball')
         elif game_world.collide(ball, grass):
                 ball.stopped = True
         
