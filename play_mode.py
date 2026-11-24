@@ -20,6 +20,8 @@ def handle_events():
             return
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.quit()
+        elif boy.self.dead == True:
+            game_framework.quit()
         else:
             boy.handle_event(event)
 
