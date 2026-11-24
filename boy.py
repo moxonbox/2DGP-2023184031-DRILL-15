@@ -145,6 +145,7 @@ class Boy:
         Fball = Ball(self.x + self.face_dir * 40, self.y + 60, self.face_dir,
                     1 if self.item == 'Ball' else 2)
         game_world.add_oject(Fball)
+
         # game_world.add_collision_pair('grass:ball', None, ball)
         # game_world.add_collision_pair('boy:ball', None, ball)
 

@@ -30,7 +30,7 @@ def init():
     global boy
     global grass
     global balls
-    global zombie
+    global zombies
 
     boy = Boy()
     grass = Grass()
@@ -50,9 +50,6 @@ def init():
     game_world.add_collision_pair('boy:zombie', boy, None)
     for zombie in zombies:
         game_world.add_collision_pair('boy:zombie', None, zombie)
-                
-
-
 
 
 
@@ -81,10 +78,9 @@ def update():
             boy.ball_count += 1
             game_world.remove_object(ball)
             balls.remove(ball)
-        if game_world.collide(zombie, ball):
-            print('COLLISION zombie : ball')
         elif game_world.collide(ball, grass):
                 ball.stopped = True
+
         
 
 

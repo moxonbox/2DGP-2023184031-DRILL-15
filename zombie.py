@@ -34,6 +34,7 @@ class Zombie:
         self.x, self.y = random.randint(MIN_X, MAX_X), 150
         self.frame = random.randint(0, 9)
         self.dir = random.choice([-1, 1])
+        self.hit = 0
 
     def update(self):
         dt = game_framework.frame_time
