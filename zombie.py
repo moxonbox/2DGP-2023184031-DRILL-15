@@ -63,6 +63,5 @@ class Zombie:
             if group == 'zombie.ball':
                 self.hit =+ 1
                 self.size =- 50
-
-            if self.hit == 2:
-                game_world.remove_object(self)
+                if self.hit == 2:
+                    game_world.remove_object(self)
