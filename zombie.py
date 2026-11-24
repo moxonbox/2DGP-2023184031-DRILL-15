@@ -56,3 +56,4 @@ class Zombie:
 
     def get_bb(self):
         return self.x - 100, self.y - 100, self.x + 100, self.y + 100
+

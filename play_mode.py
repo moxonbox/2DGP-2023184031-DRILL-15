@@ -31,6 +31,7 @@ def init():
     global grass
     global balls
     global zombies
+    global Fball
 
     boy = Boy()
     grass = Grass()
@@ -80,6 +81,7 @@ def update():
             balls.remove(ball)
         elif game_world.collide(ball, grass):
                 ball.stopped = True
+        
 
         
 

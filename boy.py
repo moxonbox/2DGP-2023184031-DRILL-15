@@ -139,6 +139,8 @@ class Boy:
         self.states['RUN'].enter(self)
 
     def fire_ball(self):
+        global Fball
+        
         if self.item is None or self.ball_count <= 0:
             return
         self.ball_count -= 1
