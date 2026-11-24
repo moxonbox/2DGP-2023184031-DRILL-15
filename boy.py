@@ -108,6 +108,7 @@ class Boy:
         self.pressed_keys = set()
         self.item = 'Ball'
         self.ball_count = 10  # 가지고 있는 공의 개수
+        self.dead = False
 
         self.states = {'IDLE': Idle(), 'SLEEP': Sleep(), 'RUN': Run()}
 
@@ -195,8 +196,5 @@ class Boy:
         if group == 'boy.ball':
             self.ball_count += 1
 
-    def handle_collision(self, group, other):
-            if group == 'boy.zombie':
-                self.die = True
-
-
+        if group == 'boy.zombie':
+            self.dead = True
