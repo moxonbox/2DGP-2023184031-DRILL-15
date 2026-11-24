@@ -20,7 +20,7 @@ def handle_events():
             return
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.quit()
-        elif boy.self.dead == True:
+        elif boy.dead == True:
             game_framework.quit()
         else:
             boy.handle_event(event)
@@ -46,6 +46,10 @@ def init():
     game_world.add_collision_pair('boy:ball', boy, None)
     for ball in balls:
         game_world.add_collision_pair('boy:ball', None, ball)
+
+    game_world.add_collision_pair('boy:zombie', boy, None)
+    for zombie in zombies:
+        game_world.add_collision_pair('boy:zombie', None, zombie)
 
 
 
