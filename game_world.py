@@ -46,8 +46,9 @@ def add_collision_pair(group, a, b):
     if group not in collision_pairs:
         print(f'Added new group {group}')
         collision_pairs[group] = [ [], [] ]
-    if a:
+    if a is not None:
         collision_pairs[group][0].append(a)
+    if b is not None:
         collision_pairs[group][1].append(b)
 
 def handle_collisions():
@@ -64,11 +65,3 @@ def remove_collision_object(o):
             pairs[0].remove(o)
         if o in pairs[1]:
             pairs[1].remove(o)
-
-def remove_object(o):
-    for layer in objects:
-        if o in layer:
-            layer.remove(o)
-            remove_collision_object(o)
-            return
-    raise ValueError('Cannot delete non existing object')
